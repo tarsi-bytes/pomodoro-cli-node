@@ -3,10 +3,19 @@ const clipProgress = require('cli-progress');
 const chalk = require('chalk');
 const notifier = require('node-notifier');
 
+let timer = null; // Global reference for the timer
+
 // Create readline interface for CLI user input
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
+});
+
+process.on('SIGINT', () => {
+    if (timer) clearInterval(timer);
+    console.log('\n⛔️ Pomodoro cancelled.\n');
+    rl.close();
+    process.exit();
 });
 
 function askForMinutes() {

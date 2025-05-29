@@ -1,5 +1,5 @@
 {
-  "name": "pomodoro-cli-node",
+  "name": "pomodoro-cli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
