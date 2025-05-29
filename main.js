@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const readline = require('readline');
 const clipProgress = require('cli-progress');
 const chalk = require('chalk');
